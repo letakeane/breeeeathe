@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>APP</h1>
+      <h1>Breeeeathe</h1>
       <Guide />
       <Controls />
     </>
