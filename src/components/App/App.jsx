@@ -7,11 +7,11 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Breeeeathe</h1>
+    <main>
       <Guide />
+      <button id="ctrls-btn"></button>
       <Controls />
-    </>
+    </main>
   )
 }
 

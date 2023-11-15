@@ -1,0 +1,8 @@
+#controls {
+  position: fixed;
+  left: right;
+  top: 0;
+  transform: translate3d(100vw, 0, 0);
+  width: 100vw;
+  height: 100vh;
+}
