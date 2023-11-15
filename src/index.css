@@ -1,10 +1,24 @@
+:root {
+  --light-bg: azure;
+  --light-accent: white;
+  --light-text: black;
+
+  --dark-bg: midnightblue;
+  --dark-accent: black;
+  --dark-text: ghostwhite;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
+  color: var(--light-text);
 }
 
 body {
   padding: 20px;
+  background: var(--light-bg);
+  color: var(--light-text);
 }
+

@@ -1,11 +1,11 @@
 #controls {
   padding: 20px;
-  background: azure;
+  background: var(--light-accent);
   position: fixed;
   right: 0;
   top: 0;
   transform: translate3d(100vw, 0, 0);
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   z-index: 100;
   display: flex;
@@ -13,7 +13,8 @@
   justify-content: space-between;
 }
 
-#credits p {
+#credits p,
+#credits a {
   font-size: 8px;
-  color: gray;
+  color: gainsboro;
 }
