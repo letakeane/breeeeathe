@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+
 :root {
   --light-bg: azure;
   --light-accent: white;
@@ -22,3 +24,12 @@ body {
   color: var(--light-text);
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Barriecito', Helvetica, sans-serif;
+}
+
+h2 {
+  font-size: 50px;
+}
