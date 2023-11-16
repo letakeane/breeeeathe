@@ -16,6 +16,7 @@
   box-shadow: 0 0 15px 5px ghostwhite;
 }
 
-#breath-info {
-  /* text-align: center; */
+#breath-info,
+#breath-info span {
+  color: rgb(144, 160, 191);
 }

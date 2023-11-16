@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import GuideContext from '../GuideContext.jsx'
 import './Controls.css'
 
 function Controls() {
+  const [state, dispatch] = useContext(GuideContext);
+  
   return (
     <section id="controls">
       <h2>Controls</h2>
