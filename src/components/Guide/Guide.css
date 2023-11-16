@@ -1,0 +1,21 @@
+.guide {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  margin: auto;
+  box-shadow: 0 0 15px 5px ghostwhite;
+}
+
+#breath-info {
+  /* text-align: center; */
+}

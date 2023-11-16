@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
 
 :root {
-  --light-bg: azure;
+  --light-bg: rgb(175, 196, 236);
   --light-accent: white;
   --light-text: black;
 
@@ -19,7 +19,6 @@
 }
 
 body {
-  padding: 20px;
   background: var(--light-bg);
   color: var(--light-text);
 }
