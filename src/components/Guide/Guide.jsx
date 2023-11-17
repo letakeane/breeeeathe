@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import GuideContext from '../GuideContext.jsx';
 import anime from 'animejs/lib/anime.es.js';
 import './Guide.css';
@@ -6,7 +6,7 @@ import './Guide.css';
 function Guide() {
   const [state, dispatch] = useContext(GuideContext)
 
-  // useEffect(() => {
+  useEffect(() => {
     anime({
       targets: '#circle',
       keyframes: [
@@ -15,7 +15,7 @@ function Guide() {
       ],
       loop: true
     });
-  // }, [])
+  }, [])
 
   return (
     <section className="guide">

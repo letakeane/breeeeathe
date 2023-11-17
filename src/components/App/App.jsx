@@ -10,7 +10,8 @@ const initialState = {
   inHoldDuration: 0,
   outHoldDuration: 0,
   displayBreathInfo: true,
-  breathInfo: 7.5
+  breathInfo: 7.5,
+  displayControls: false
 }
 
 const reducer = (state, action) => {
@@ -27,6 +28,8 @@ const reducer = (state, action) => {
       return {...state, displayBreathInfo: action.display}
     case 'SET_BREATH_INFO':
       return {...state, breathInfo: action.info}
+    case 'SET_DISPLAY_CONTROLS':
+      return {...state, displayControls: action.display}
     default:
       return state
   }
@@ -65,12 +68,16 @@ function App() {
     dispatch(action);
   }
 
+  const setDisplayControls = display => {
+    const action = { type: 'SET_DISPLAY_CONTROLS', display: display };
+    dispatch(action);
+  }
+
   return (
     <GuideContext.Provider value={[state, dispatch]} >
       <main>
         <Guide />
-        <button id="ctrls-btn"></button>
-        <Controls />
+        <Controls setDisplayControls={setDisplayControls} />
       </main>
     </GuideContext.Provider>
   )

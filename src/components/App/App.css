@@ -2,15 +2,3 @@ main {
   
 }
 
-#ctrls-btn {
-  width: 20px;
-  height: 20px;
-  background: none;
-  background-image: url('./settings.png');
-  background-size: cover;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
