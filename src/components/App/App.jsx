@@ -77,7 +77,13 @@ function App() {
     <GuideContext.Provider value={[state, dispatch]} >
       <main>
         <Guide />
-        <Controls setDisplayControls={setDisplayControls} />
+        <Controls 
+          setDisplayControls={setDisplayControls} 
+          setInDuration={setInDuration}
+          setInHoldDuration={setInHoldDuration}
+          setOutDuration={setOutDuration}
+          setOutHoldDuration={setOutHoldDuration}
+        />
       </main>
     </GuideContext.Provider>
   )
