@@ -32,11 +32,13 @@
 }
 
 .hide-button {
-  transform: translate3d(0, calc(100vh - 615px), 0);
+  transform: translate3d(0, calc(100vh - 530px), 0);
+  background-image: url('./settings.png')!important;
 }
 
 .show-button {
   transform: translate3d(0, -10px, 0);
+  background-image: url('./close.png')!important;
 }
 
 .hide {

@@ -41,6 +41,16 @@ function Controls({ setDisplayControls }) {
             </a>{" "}
             - Flaticon
           </p>
+          <p className="credit">
+            Close icons created by{" "}
+            <a
+              href="https://www.flaticon.com/free-icons/close"
+              title="close icons"
+            >
+              Pixel perfect
+            </a>{" "}
+            - Flaticon
+          </p>
         </div>
       </section>
     </section>

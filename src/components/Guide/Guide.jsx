@@ -10,8 +10,10 @@ function Guide() {
     anime({
       targets: '#circle',
       keyframes: [
-        { scale: 2, easing: 'easeInOutSine', duration: state.inDuration + state.inHoldDuration },
-        { scale: 1, easing: 'easeInOutSine', duration: state.outDuration + state.outHoldDuration },
+        { scale: 2, easing: 'easeInOutSine', duration: state.inDuration },
+        { duration: state.inHoldDuration },
+        { scale: 1, easing: 'easeInOutSine', duration: state.outDuration },
+        { duration: state.outHoldDuration }
       ],
       loop: true
     });
