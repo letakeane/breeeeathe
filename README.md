@@ -1,8 +1,15 @@
-# React + Vite
+# Breeeeathe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A very simple breathing guide. Users can set the speed of the guide and get information about breaths taken per minute.
 
-Currently, two official plugins are available:
+## Learning Goals
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The primary learning goal of this application was familiarizing myself with [animeJS](https://animejs.com/).
+
+A secondary learning goal was using [Bootstrap](https://getbootstrap.com/).
+
+## Installation
+
+1. Clone down this repo.
+1. Install dependencies.
+1. To view locally, use the command `npm run dev` - follow the provided link to view your local version.
