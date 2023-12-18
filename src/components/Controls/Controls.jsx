@@ -3,7 +3,6 @@ import GuideContext from "../GuideContext.jsx";
 import "./Controls.css";
 
 function Controls({
-  setDisplayControls,
   setBreathInfo,
   setDisplayBreathInfo,
   setDuration,
@@ -19,14 +18,12 @@ function Controls({
   }
 
   function onSliderInput(e) {
-    // e.preventDefault();
     const breathsPerMinute = (60 / (e.target.value * 2)).toFixed(1);
     setBreathInfo(breathsPerMinute);
     setDuration(translateToMS(e.target.value));
   }
 
   function onToggleInput(e) {
-    // e.preventDefault();
     setDisplayBreathInfo(!state.displayBreathInfo);
   }
 
