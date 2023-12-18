@@ -6,19 +6,38 @@ import "./Guide.css";
 function Guide() {
   const [state, dispatch] = useContext(GuideContext);
 
+  function translateToSize(ms) {
+    let value = (ms / 20);
+
+    return value > 300 ? 300 : value;
+  }
+
   useEffect(() => {
     anime({
       targets: "#circle",
       keyframes: [
-        { scale: 2, easing: "easeInOutSine", duration: state.inDuration },
-        { duration: state.inHoldDuration },
-        { scale: 1, easing: "easeInOutSine", duration: state.outDuration },
-        { duration: state.outHoldDuration },
-        { scale: 1, easing: "easeInOutSine"}
+        {
+          height: '100px',
+          width: '100px',
+          duration: 0
+        },
+        {
+          width: `${translateToSize(state.duration)}px`,
+          height: `${translateToSize(state.duration)}px`,
+          duration: state.duration
+        },
+        {
+          height: '100px',
+          width: '100px',
+          duration: state.duration
+        },
       ],
       loop: true,
+      easing: "easeInOutSine",
     });
-  }, [state.inDuration, state.inHoldDuration, state.outDuration, state.outHoldDuration]);
+  }, [
+    state.duration
+  ]);
 
   return (
     <section className="guide">

@@ -29,10 +29,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* height: 500px; */
 }
 
 .hide-button {
-  transform: translate3d(0, calc(100vh - 530px), 0);
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
   background-image: url('./settings.png')!important;
 }
 
@@ -55,6 +58,7 @@
 #credits a {
   font-size: 8px;
   color: gainsboro;
+  margin: 0;
 }
 
 @keyframes reveal {

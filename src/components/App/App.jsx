@@ -5,10 +5,7 @@ import Controls from '../Controls/Controls.jsx'
 import './App.css'
 
 const initialState = {
-  inDuration: 4000,
-  outDuration: 4000,
-  inHoldDuration: 0,
-  outHoldDuration: 0,
+  duration: 4000,
   displayBreathInfo: true,
   breathInfo: 7.5,
   displayControls: false
@@ -16,14 +13,8 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch(action.type) {
-    case 'SET_IN_DURATION':
-      return {...state, inDuration: action.duration}
-    case 'SET_OUT_DURATION':
-      return {...state, outDuration: action.duration}
-    case 'SET_IN_HOLD_DURATION':
-      return {...state, inHoldDuration: action.duration}
-    case 'SET_OUT_HOLD_DURATION':
-      return {...state, outHoldDuration: action.duration}
+    case 'SET_DURATION':
+      return {...state, duration: action.duration}
     case 'SET_DISPLAY_BREATH_INFO':
       return {...state, displayBreathInfo: action.display}
     case 'SET_BREATH_INFO':
@@ -38,23 +29,8 @@ const reducer = (state, action) => {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const setInDuration = duration => {
-    const action = { type: 'SET_IN_DURATION', duration: duration};
-    dispatch(action);
-  }
-
-  const setOutDuration = duration => {
-    const action = { type: 'SET_OUT_DURATION', duration: duration};
-    dispatch(action);
-  }
-  
-  const setInHoldDuration = duration => {
-    const action = { type: 'SET_IN_HOLD_DURATION', duration: duration };
-    dispatch(action);
-  }
-
-  const setOutHoldDuration = duration => {
-    const action = { type: 'SET_OUT_HOLD_DURATION', duration: duration };
+  const setDuration = duration => {
+    const action = { type: 'SET_DURATION', duration: duration};
     dispatch(action);
   }
 
@@ -79,10 +55,9 @@ function App() {
         <Guide />
         <Controls 
           setDisplayControls={setDisplayControls} 
-          setInDuration={setInDuration}
-          setInHoldDuration={setInHoldDuration}
-          setOutDuration={setOutDuration}
-          setOutHoldDuration={setOutHoldDuration}
+          setBreathInfo={setBreathInfo}
+          setDisplayBreathInfo={setDisplayBreathInfo}
+          setDuration={setDuration}
         />
       </main>
     </GuideContext.Provider>

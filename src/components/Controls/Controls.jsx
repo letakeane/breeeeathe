@@ -4,10 +4,9 @@ import "./Controls.css";
 
 function Controls({
   setDisplayControls,
-  setInDuration,
-  setInHoldDuration,
-  setOutDuration,
-  setOutHoldDuration,
+  setBreathInfo,
+  setDisplayBreathInfo,
+  setDuration,
 }) {
   const [state, dispatch] = useContext(GuideContext);
 
@@ -17,7 +16,18 @@ function Controls({
 
   function translateToMS(wholeSeconds) {
     return wholeSeconds * 1000;
-  };
+  }
+
+  function onSliderInput(e) {
+    // e.preventDefault();
+    setBreathInfo(60 / (e.target.value * 2));
+    setDuration(translateToMS(e.target.value));
+  }
+
+  function onToggleInput(e) {
+    // e.preventDefault();
+    setDisplayBreathInfo(!state.displayBreathInfo);
+  }
 
   return (
     <section id="menu">
@@ -29,49 +39,34 @@ function Controls({
       <section
         className={state.displayControls ? "show" : "hide"}
         id="controls"
-        // onBlur={() => setDisplayControls(false)}
       >
         <h2>Controls</h2>
-        <label htmlFor="in-duration">In duration: <span id="in-duration-display">{translateToSlider(state.inDuration)}</span> seconds</label>
+        <label htmlFor="duration">
+          Duration:{" "}
+          <span id="duration-display">{translateToSlider(state.duration)}</span>{" "}
+          seconds
+        </label>
         <input
           type="range"
-          name="in-duration"
-          id="in-duration"
-          min="0"
+          name="duration"
+          id="duration"
+          min="3"
           max="10"
-          defaultValue={translateToSlider(state.inDuration)}
-          onInput={(e) => setInDuration(translateToMS(e.target.value))}
+          defaultValue={translateToSlider(state.duration)}
+          onInput={onSliderInput}
         />
-        <label htmlFor="in-hold-duration">In hold duration: <span id="in-hold-duration-display">{translateToSlider(state.inHoldDuration)}</span> seconds</label>
-        <input
-          type="range"
-          name="in-hold-duration"
-          id="in-hold-duration"
-          min="0"
-          max="10"
-          defaultValue={translateToSlider(state.inHoldDuration)}
-          onInput={(e) => setInHoldDuration(translateToMS(e.target.value))}
-        />
-        <label htmlFor="out-duration">Out duration: <span id="out-duration-display">{translateToSlider(state.outDuration)}</span> seconds</label>
-        <input
-          type="range"
-          name="out-duration"
-          id="out-duration"
-          min="0"
-          max="10"
-          defaultValue={translateToSlider(state.outDuration)}
-          onInput={(e) => setOutDuration(translateToMS(e.target.value))}
-        />
-        <label htmlFor="out-hold-duration">Out hold duration: <span id="out-hold-duration-display">{translateToSlider(state.outHoldDuration)}</span> seconds</label>
-        <input
-          type="range"
-          name="out-hold-duration"
-          id="out-hold-duration"
-          min="0"
-          max="10"
-          defaultValue={translateToSlider(state.outHoldDuration)}
-          onInput={(e) => setOutHoldDuration(translateToMS(e.target.value))}
-        />
+        <div class="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            id="flexSwitchCheckDefault"
+            checked={state.displayBreathInfo}
+            onInput={onToggleInput}
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault">
+            Show breaths per minute
+          </label>
+        </div>
 
         <div id="credits">
           <p className="credit">
