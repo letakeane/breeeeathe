@@ -1,57 +1,7 @@
-#menu {
+.btn-light {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  height: 90vh;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-right: 20px;
-}
-
-#ctrls-btn {
-  width: 20px;
-  height: 20px;
-  background: none;
-  background-image: url('./settings.png');
-  background-size: cover;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  z-index: 100;
-}
-
-#controls {
-  padding: 20px;
-  background: var(--light-accent);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* height: 500px; */
-}
-
-.hide-button {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background-image: url('./settings.png')!important;
-}
-
-.show-button {
-  transform: translate3d(0, -10px, 0);
-  background-image: url('./close.png')!important;
-}
-
-.hide {
-  transform: translate3d(0, calc(100vh - 120px), 0);
-}
-
-.show {
-  animation: reveal;
-  animation-duration: 600;
-  animation-timing-function: ease-in-out;
+  right: 10px;
 }
 
 #credits p,
@@ -61,12 +11,7 @@
   margin: 0;
 }
 
-@keyframes reveal {
-  from { 
-    transform: translate3d(0, calc(100vh - 120px), 0);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+#credits {
+  position: fixed;
+  bottom: 10px;
 }

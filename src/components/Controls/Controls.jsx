@@ -20,7 +20,8 @@ function Controls({
 
   function onSliderInput(e) {
     // e.preventDefault();
-    setBreathInfo(60 / (e.target.value * 2));
+    const breathsPerMinute = (60 / (e.target.value * 2)).toFixed(1);
+    setBreathInfo(breathsPerMinute);
     setDuration(translateToMS(e.target.value));
   }
 
@@ -30,75 +31,95 @@ function Controls({
   }
 
   return (
-    <section id="menu">
+    <>
       <button
-        id="ctrls-btn"
-        onClick={() => setDisplayControls(!state.displayControls)}
-        className={state.displayControls ? "show-button" : "hide-button"}
-      />
-      <section
-        className={state.displayControls ? "show" : "hide"}
-        id="controls"
+        className="btn btn-light btn-sm"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        data-bs-backdrop="true"
+        aria-controls="offcanvasBottom"
       >
-        <h2>Controls</h2>
-        <label htmlFor="duration">
-          Duration:{" "}
-          <span id="duration-display">{translateToSlider(state.duration)}</span>{" "}
-          seconds
-        </label>
-        <input
-          type="range"
-          name="duration"
-          id="duration"
-          min="3"
-          max="10"
-          defaultValue={translateToSlider(state.duration)}
-          onInput={onSliderInput}
-        />
-        <div class="form-check form-switch">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            id="flexSwitchCheckDefault"
-            checked={state.displayBreathInfo}
-            onInput={onToggleInput}
-          />
-          <label class="form-check-label" for="flexSwitchCheckDefault">
-            Show breaths per minute
+        Controls
+      </button>
+      <div
+        className="offcanvas offcanvas-end"
+        tabIndex="-1"
+        id="offcanvasBottom"
+        aria-labelledby="controlsLabel"
+      >
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="controlsLabel">
+            Controls
+          </h5>
+          <button
+            type="button"
+            className="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div className="offcanvas-body small">
+          <label className="form-label" htmlFor="duration">
+            Duration:&nbsp;
+            <span id="duration-display">{translateToSlider(state.duration)}</span> seconds
           </label>
-        </div>
+          <input
+              className="form-range"
+              type="range"
+              name="duration"
+              id="duration"
+              min="3"
+              max="10"
+              step="0.5"
+              defaultValue={translateToSlider(state.duration)}
+              onInput={onSliderInput}
+            />
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input form-control"
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+                checked={state.displayBreathInfo}
+                onInput={onToggleInput}
+              />
+              <label className="form-check-label" for="flexSwitchCheckDefault">
+                Show breaths per minute
+              </label>
+            </div>
 
-        <div id="credits">
-          <p className="credit">
-            Ui icons created by&nbsp;
-            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">
-              Icon mania
-            </a>
-            &nbsp; - Flaticon
-          </p>
-          <p className="credit">
-            Settings icons created by
-            <a
-              href="https://www.flaticon.com/free-icons/settings"
-              title="settings icons"
-            >
-              dmitri13
-            </a>
-            &nbsp; - Flaticon
-          </p>
-          <p className="credit">
-            Close icons created by&nbsp;
-            <a
-              href="https://www.flaticon.com/free-icons/close"
-              title="close icons"
-            >
-              Pixel perfect
-            </a>
-            &nbsp; - Flaticon
-          </p>
+            <div id="credits">
+              <p className="credit">
+                Ui icons created by&nbsp;
+                <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">
+                  Icon mania
+                </a>
+                &nbsp; - Flaticon
+              </p>
+              <p className="credit">
+                Settings icons created by
+                <a
+                  href="https://www.flaticon.com/free-icons/settings"
+                  title="settings icons"
+                >
+                  dmitri13
+                </a>
+                &nbsp; - Flaticon
+              </p>
+              <p className="credit">
+                Close icons created by&nbsp;
+                <a
+                  href="https://www.flaticon.com/free-icons/close"
+                  title="close icons"
+                >
+                  Pixel perfect
+                </a>
+                &nbsp; - Flaticon
+              </p>
+            </div>
+          </div>
         </div>
-      </section>
-    </section>
+    </>
   );
 }
 
