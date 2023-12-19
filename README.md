@@ -13,3 +13,9 @@ A secondary learning goal was using [Bootstrap](https://getbootstrap.com/).
 1. Clone down this repo.
 1. Install dependencies.
 1. To view locally, use the command `npm run dev` - follow the provided link to view your local version.
+
+## Deployment
+
+The app is deployed at [https://letakeane.github.io/breeeeathe](https://letakeane.github.io/breeeeathe).
+
+![gif of app demo](demo.gif)
