@@ -18,4 +18,4 @@ A secondary learning goal was using [Bootstrap](https://getbootstrap.com/).
 
 The app is deployed at [https://letakeane.github.io/breeeeathe](https://letakeane.github.io/breeeeathe).
 
-<img src="/public/demo.gif" alt="demo gif" width="100" />
+<img src="/public/demo.gif" alt="demo gif" width="250" />
