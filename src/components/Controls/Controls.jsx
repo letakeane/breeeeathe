@@ -86,33 +86,7 @@ function Controls({
             </div>
 
             <div id="credits">
-              <p className="credit">
-                Ui icons created by&nbsp;
-                <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">
-                  Icon mania
-                </a>
-                &nbsp; - Flaticon
-              </p>
-              <p className="credit">
-                Settings icons created by
-                <a
-                  href="https://www.flaticon.com/free-icons/settings"
-                  title="settings icons"
-                >
-                  dmitri13
-                </a>
-                &nbsp; - Flaticon
-              </p>
-              <p className="credit">
-                Close icons created by&nbsp;
-                <a
-                  href="https://www.flaticon.com/free-icons/close"
-                  title="close icons"
-                >
-                  Pixel perfect
-                </a>
-                &nbsp; - Flaticon
-              </p>
+              <p className="credit">Built by <a href="https://www.linkedin.com/in/letakeane">Leta Keane</a></p>
             </div>
           </div>
         </div>
